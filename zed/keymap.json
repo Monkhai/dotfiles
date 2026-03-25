@@ -1,0 +1,173 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-b": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-l": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": "terminal_panel::Toggle"
+    }
+  },
+  {
+    "context": "SettingsWindow",
+    "bindings": {
+      "alt-cmd-k": "settings_editor::FocusNextFile"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-cmd-k": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-cmd-j": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "SettingsWindow",
+    "bindings": {
+      "alt-cmd-j": "settings_editor::FocusPreviousFile"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-#": [
+        "workspace::IncreaseActiveDockSize",
+        {
+          "px": 100
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-@": [
+        "workspace::DecreaseActiveDockSize",
+        {
+          "px": 100
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt--": [
+        "workspace::DecreaseActiveDockSize",
+        {
+          "px": 10
+        }
+      ]
+    }
+  },
+  // ========================================
+  // Vim bindings (ported from Cursor/VSCode)
+  // ========================================
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // + goes to end of line (like $)
+      "+": ["workspace::SendKeystrokes", "$"],
+      // Ctrl-j/k for half page down/up
+      "ctrl-j": ["workspace::SendKeystrokes", "ctrl-d"],
+      "ctrl-k": ["workspace::SendKeystrokes", "ctrl-u"],
+      // Space (leader) shortcuts
+      "space d": ["workspace::SendKeystrokes", "d $"],
+      "space c": ["workspace::SendKeystrokes", "c $"],
+      "space v": ["workspace::SendKeystrokes", "v $ h"],
+      "space shift-w": ["workspace::SendKeystrokes", "v i shift-w"],
+      "space w": ["workspace::SendKeystrokes", "v i w"],
+      "space {": ["workspace::SendKeystrokes", "v i {"],
+      "space }": ["workspace::SendKeystrokes", "v a {"],
+      "space [": ["workspace::SendKeystrokes", "v i ["],
+      "space ]": ["workspace::SendKeystrokes", "v a ["],
+      "space (": ["workspace::SendKeystrokes", "v i ("],
+      "space )": ["workspace::SendKeystrokes", "v a ("],
+      "space \"": ["workspace::SendKeystrokes", "v i \""],
+      "space '": ["workspace::SendKeystrokes", "v i '"]
+    }
+  },
+  // ctrl-j/k to navigate menus (like ctrl-n/p)
+  {
+    "context": "Menu",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "AutocompleteMenu",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  },
+  // Move lines with alt-j/k (from Cursor keybindings)
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "shift-alt-j": "editor::DuplicateLineDown",
+      "shift-alt-k": "editor::DuplicateLineUp"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "cmd-{": "editor::Fold"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "cmd-}": "editor::UnfoldLines"
+    }
+  }
+]
