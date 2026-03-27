@@ -7,18 +7,49 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"icon_theme": "Zed (Default)",
+	"diff_view_style": "unified",
+ "show_edit_predictions": false,
+ "icon_theme": {
+  "mode": "dark",
+  "light": "Zed (Default)",
+  "dark": "Zed (Default)"
+ },
  "git_panel": {
-		"dock": "right",
+		"show_count_badge": true,
+  "file_icons": true,
+  "tree_view": true,
+  "default_width": 360.0,
+  "status_style": "icon",
+  "dock": "right",
 	},
 	"ui_font_family": "JetBrains Mono",
 	"agent": {
-		"default_model": {
+		"notify_when_agent_waiting": "never",
+  "tool_permissions": {
+   "default": "allow",
+   "tools": {
+    "delete_path": {
+     "default": "allow"
+    },
+    "terminal": {
+     "default": "allow"
+    },
+    "edit_file": {
+     "default": "allow",
+     "always_allow": [
+      {
+       "pattern": "^packages/edsdk/"
+      }
+     ]
+    }
+   }
+  },
+  "default_model": {
    "provider": "anthropic",
-   "model": "claude-opus-4-6-1m-context-thinking-latest",
+   "model": "claude-opus-4-6-thinking-latest",
    "enable_thinking": true
   },
-  "dock": "bottom",
+  "dock": "left",
 		"favorite_models": [],
 		"model_parameters": [],
 	},
@@ -44,8 +75,8 @@
 	"show_whitespaces": "none",
 	"ensure_final_newline_on_save": false,
 	"preferred_line_length": 140,
-	"hard_tabs": true,
-	"tab_size": 2,
+	"hard_tabs": false,
+	"tab_size": 4,
 	"base_keymap": "VSCode",
 	"ui_font_size": 16,
 	"buffer_font_size": 15,
@@ -63,9 +94,15 @@
 				"source.fixAll.eslint": true,
 			},
 		},
+		"JSX": {
+			"formatter": [],
+			"code_actions_on_format": {
+				"source.fixAll.eslint": true,
+			},
+		},
 	},
 	"theme": {
-		"mode": "system",
+		"mode": "dark",
 		"light": "One Light",
 		"dark": "Duskfox - opaque",
 	},
