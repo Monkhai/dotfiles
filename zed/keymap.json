@@ -254,7 +254,7 @@
   },
   {
     "bindings": {
-      "ctrl-g d": "git::Diff"
+      "cmd-shift-g": "git::Diff"
     }
   }
 ]
