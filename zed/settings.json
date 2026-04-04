@@ -47,8 +47,9 @@
             },
         },
         "default_model": {
+            "effort": "high",
             "provider": "anthropic",
-            "model": "claude-opus-4-6-thinking-latest",
+            "model": "claude-opus-4-6-latest",
             "enable_thinking": true,
         },
         "dock": "left",
@@ -88,6 +89,9 @@
             },
         },
     },
+    "prettier": {
+        "allowed": false,
+    },
     "languages": {
         "JavaScript": {
             "formatter": [],
@@ -96,6 +100,24 @@
             },
         },
         "JSX": {
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+            },
+        },
+        "TypeScript": {
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+            },
+        },
+        "TSX": {
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+            },
+        },
+        "Svelte": {
             "formatter": [],
             "code_actions_on_format": {
                 "source.fixAll.eslint": true,
